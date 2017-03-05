@@ -5,13 +5,19 @@ var element = document.querySelector(".form-signup");
 });
 function calcularForm(){
    var form1 = document.getElementsByName("form1")[0];
-   var masa = document.getElementById('peso').value;
+   var masa = .value;
    var masa =parseFloat(masa)/9.8;
+   if(isNaN(masa)){
+     alert("Ingrese un valor numérico");
+     document.getElementById('peso')
+
+     return false;
+   }
    function calPeso(a,b){
   		var pesoPlaneta = a * b;
   		return pesoPlaneta.toFixed(2);
 	 }
-   alert("\n Tu peso en otros mundos del Sistema solar :\n"
+   alert("\n Tu peso en otros mundos del Sistema Solar :\n"
            + "\n Tu peso en Mercurio es : " + calPeso(masa,3.7)+ " Kg."
            + "\n Tu peso en Venus es : " + calPeso(masa,8.87)+ " Kg."
            + "\n Tu peso en Marte es : " + calPeso(masa,3.71)+ " Kg."
